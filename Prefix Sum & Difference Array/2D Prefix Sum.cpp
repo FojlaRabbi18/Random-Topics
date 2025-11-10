@@ -26,6 +26,7 @@ void solve() {
         cout << '\n';
     }
     /* -----for 0 based index-----
+    Just imagine there is an extra column and extra row with all 0s in the pre array (left & top)
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
             int up = (i > 0) ? pre[i - 1][j] : 0;
