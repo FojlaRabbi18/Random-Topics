@@ -1,3 +1,5 @@
+// Only effective when mod value is small
+
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
