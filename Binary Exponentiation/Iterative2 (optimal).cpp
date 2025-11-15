@@ -3,13 +3,13 @@ using namespace std;
 #define ll long long
 
 int power(int x, ll n, int mod) { // O(log n) = 64
-    int cur = x % mod; // x^(2^0)   
+    x = x % mod; // x^(2^0)   
     int ans = 1 % mod;
     while(n > 0) {
         if(n & 1) {
-            ans = 1LL * ans * cur % mod;
+            ans = 1LL * ans * x % mod;
         }
-        cur = 1LL * cur * cur % mod;
+        x = 1LL * x * x % mod; 
         n = n >> 1; // Another way of traversal 
     }
     return ans;
