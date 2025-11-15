@@ -44,7 +44,7 @@ int power(int x, ll n, int mod) { // O(log n) = 63
         }
         cur = 1LL * cur * cur % mod; 
         // This line makes even cleaner sense 
-        // because power is always increasing by 2 
+        // because power is always getting doubled (power of 2 is increasing by 1) 
         // Say cur = x^4, so, it will be changed to (x^4 * x^4) = x^8 (2^2 --> 2^3)
     }
     return ans;
