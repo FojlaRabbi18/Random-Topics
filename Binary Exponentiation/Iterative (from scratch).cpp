@@ -36,13 +36,13 @@ using namespace std;
 #define ll long long
 
 int binpow(int a, ll n, int m) { // O(log n) = 63
-    int cur = a % m; // a^(2^0)   
+    ll cur = a % m; // a^(2^0)   
     ll res = 1 % m;
     for(int i = 0; i <= 62; i++) {
         if(n >> i & 1) {
             res = res * cur % m;
         }
-        cur = 1LL * cur * cur % m; 
+        cur = cur * cur % m; 
         // This line makes even cleaner sense 
         // because power is always getting doubled (power of 2 is increasing by 1) 
         // Say cur = a^4, so, it will be changed to (a^4 * a^4) = a^8 (2^2 --> 2^3)
