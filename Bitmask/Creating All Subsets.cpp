@@ -1,32 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-	int n;
-	cin>>n;
-	int arr[n];
-	for(int i=0;i<n;i++){
-		cin>>arr[i];
-	}
-	for(int mask=0; mask<(1<<n); mask++){
-		for(int i=0;i<n;i++){
-			if(mask>>i & 1){ // Checking whether ith bit is on or off
-				cout<<arr[n-1-i]<<" ";
-				// Remember bit indexing is from right to left
-				// which is opposite to arr indexing
-				// i is giving the position of bit...
-			}
-		}
-		cout<<"\n";
-	}
-	return 0;
+#define ll long long
+
+void solve() {
+    int n; 
+    cin >> n;
+    vector<int> a(n);
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+	// In case of subsets, order doesn't matter
+	// So, simply imagine the array indexing from right to left (elements of the array also from right to left)
+	// (it helps to match the bit indexing for comparing set bits to array elements)
+    for(int mask = 0; mask < (1 << n); mask++) {
+        for(int i = 0; i < n; i++) {
+            if(mask >> i & 1) cout << a[i] << " ";
+        }
+        cout << '\n';
+    }
+    
 }
-// Output for --> 1 2 3
-/*
-empty
-  3 
-  2 
-  3 2 
-  1 
-  3 1 
-  2 1 
-  3 2 1  */
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    solve();
+    return 0;
+}
