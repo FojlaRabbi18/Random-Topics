@@ -2,24 +2,23 @@
 using namespace std;
 #define ll long long
 
-int power(int x, ll n, int mod) { // O(log n) = 64
-    x = x % mod; // x^(2^0)   
-    int ans = 1 % mod;
+int binpow(int a, ll n, int m) {
+    a = a % m;   
+    ll res = 1 % m;
     while(n > 0) {
         if(n & 1) {
-            ans = 1LL * ans * x % mod;
+            res = res * a % m;
         }
-        x = 1LL * x * x % mod; 
-        n = n >> 1; // Another way of traversal 
+        a = a * a % m;
+        n >>= 1;
     }
-    return ans;
-  
+    return res;  
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    cout << power(1e8 + 9, 1e18, 1e9 + 7);
+    cout << binpow(1e8 + 9, 1e18, 1e9 + 7);
     return 0;
 }
 // 908727740
