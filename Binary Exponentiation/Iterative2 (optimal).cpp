@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 
-int binpow(int a, ll n, int m) {
+int binpow(ll a, ll n, int m) {
     a = a % m;   
     ll res = 1 % m;
     while(n > 0) {
