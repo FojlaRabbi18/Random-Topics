@@ -4,7 +4,9 @@ using namespace std;
 #define debug(x) cout << #x << ": " << x << '\n'
 
 void solve() { 
-    int n, k; cin >> n >> k;
+    int n, k; 
+    cin >> n >> k;
+    
     vector<int> a(n);
     map<int, int> freq;
     for(int i = 0; i < n; i++) {
@@ -31,6 +33,7 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    
     int t;
     cin >> t;
     while(t--) {
