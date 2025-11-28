@@ -15,6 +15,7 @@ void solve() {
     if(even_cnt == n || even_cnt == 0) cout << "4\n";
     else cout << "2\n";
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
