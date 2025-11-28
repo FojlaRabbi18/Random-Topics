@@ -1,40 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define debug(x) cout << #x << ": " << x << '\n'
 
-void solve() { 
-    int n, k; 
-    cin >> n >> k;
-    
-    vector<int> a(n);
-    map<int, int> freq;
+void solve() {
+    int n; 
+    cin >> n;
+
+    vector<ll> a(n);
+    int even_cnt = 0;
     for(int i = 0; i < n; i++) {
         cin >> a[i];
-        freq[a[i]]++;
+        if(a[i] % 2 == 0) even_cnt++;
     }
-    bool flag = true;
-    for(auto [x, y]: freq) {
-        if(y % k != 0) flag = false;
-    }
-    ll ans = 0;
-    if(flag) {
-        for(int i = 0; i < n; i++) {
-            map<int, int> temp;
-            for(int j = i; j < n; j++) {
-                temp[a[j]]++;
-                if(temp[a[j]] <= (freq[a[j]] / k)) ans++;
-                else break;
-            }
-        }
-    }
-    cout << ans << '\n';   
+    if(even_cnt == n || even_cnt == 0) cout << "4\n";
+    else cout << "2\n";
 }
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
-    int t;
+
+    int t; 
     cin >> t;
     while(t--) {
         solve();
